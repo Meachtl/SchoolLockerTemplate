@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>@ViewBag.Message</h2>
+@*<h3>@ViewBag.Hansi</h3>
+<h4>@ViewBag.Sepp</h4>*@
+
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerItems[0].Number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerItems[0].CountBookings)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerItems[0].FromTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockerItems[0].ToTime)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.LockerItems)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(_ => item.Number)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(_ => item.CountBookings)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(_ => item.FromTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(_ => item.ToTime)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+
+
